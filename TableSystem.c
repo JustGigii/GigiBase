@@ -51,15 +51,32 @@ Erros CreateTable(char * name, refcolumn primary, refcolumn* refcolumns)
 	
 }
 
+Erros CreateColumns(char* name, DataType type, void* row,refcolumn * newcolumnref  )
+{
+	refcolumn newcolumn =  malloc(sizeof(column));
+	if (newcolumn == NULL) return CANNOT_ALLOCTE;
+	newcolumn->name = name;
+	newcolumn->row = row;
+	newcolumn->type = type;
+	*newcolumnref = newcolumn;
+	return SUCCES;
+}
+
 Erros buildHupa()
 {
-	char namearry[] = "HupaTable";
-	char* name = malloc(strlen(namearry));
+	char name[] = "HupaTable";
+
+	refcolumn primery;
+	if (CreateColumns("id", USHORT, 0, &primery) == CANNOT_ALLOCTE)
+		return CANNOT_ALLOCTE;
+
+	
 	
 }
 
 
 void main()
 {
-	
+	if (buildHupa() == SUCCES)
+		printf("the table build succes");
 }

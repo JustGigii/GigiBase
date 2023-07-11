@@ -1,4 +1,4 @@
 ﻿  TableSystem.c
-D:\עבודה\MyDataBase\TableSystem.c(35,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
-D:\עבודה\MyDataBase\TableSystem.c(35,9): message : consider using '%zd' in the format string
-  MyDataBase.vcxproj -> D:\עבודה\MyDataBase\x64\Debug\MyDataBase.exe
+D:\project\GigiBase\TableSystem.c(44,44): warning C4047: '=': 'refTable' differs in levels of indirection from 'int'
+D:\project\GigiBase\TableSystem.c(75): warning C4715: 'buildHupa': not all control paths return a value
+  MyDataBase.vcxproj -> D:\project\GigiBase\x64\Debug\MyDataBase.exe
