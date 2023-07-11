@@ -1,0 +1,4 @@
+﻿  TableSystem.c
+D:\עבודה\MyDataBase\TableSystem.c(35,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+D:\עבודה\MyDataBase\TableSystem.c(35,9): message : consider using '%zd' in the format string
+  MyDataBase.vcxproj -> D:\עבודה\MyDataBase\x64\Debug\MyDataBase.exe
