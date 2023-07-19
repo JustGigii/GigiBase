@@ -1,27 +1,7 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-typedef enum
-{
-	CANNOT_ALLOCTE,
-	SUCCES
-	
-}Erros;
-typedef enum
-{
-	NUMBER,
-	LONG,
-	SHORT,
-	UNUMBER,
-	ULONG,
-	USHORT,
-	DOUBLE,
-	FLOAT,
-	VARCHAR,
-	BOOL,
-	TIME,
-} DataType;
+#include "Enum.h"
 
 typedef struct 
 {
@@ -75,8 +55,8 @@ Erros buildHupa()
 }
 
 
-void main()
-{
-	if (buildHupa() == SUCCES)
-		printf("the table build succes");
-}
+//void main()
+//{
+//	if (buildHupa() == SUCCES)
+//		printf("the table build succes");
+//}

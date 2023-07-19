@@ -1,4 +1,6 @@
-﻿  TableSystem.c
-D:\project\GigiBase\TableSystem.c(44,44): warning C4047: '=': 'refTable' differs in levels of indirection from 'int'
-D:\project\GigiBase\TableSystem.c(75): warning C4715: 'buildHupa': not all control paths return a value
-  MyDataBase.vcxproj -> D:\project\GigiBase\x64\Debug\MyDataBase.exe
+﻿  Dictionary.c
+D:\עבודה\MyDataBase\Dictionary.c(37,6): warning C4013: 'init' undefined; assuming extern returning int
+D:\עבודה\MyDataBase\Dictionary.c(38,10): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'void *'
+D:\עבודה\MyDataBase\Dictionary.c(30): warning C4716: 'FreeDict': must return a value
+Dictionary.obj : error LNK2019: unresolved external symbol init referenced in function main
+D:\עבודה\MyDataBase\x64\Debug\MyDataBase.exe : fatal error LNK1120: 1 unresolved externals
