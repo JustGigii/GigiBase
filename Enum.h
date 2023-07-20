@@ -1,4 +1,6 @@
 #pragma once
+#ifndef Enum.h
+#define Enum.h
 typedef enum
 {
 	CANNOT_ALLOCTE,
@@ -19,3 +21,4 @@ typedef enum
 	BOOL,
 	TIME,
 } DataType;
+#endif

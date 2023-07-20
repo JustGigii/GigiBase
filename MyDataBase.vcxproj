@@ -131,6 +131,7 @@
     <ClCompile Include="TableSystem.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="C:\Users\gigi\Downloads\khash.h" />
     <ClInclude Include="Entry.h" />
     <ClInclude Include="Enum.h" />
   </ItemGroup>

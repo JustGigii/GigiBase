@@ -15,7 +15,7 @@ typedef struct
 	char * name;
 	refcolumn primary;
 	refcolumn * refcolumns;
-
+	char* namecolumns[]
 }Table, * refTable;
 
 Erros CreateTable(char * name, refcolumn primary, refcolumn* refcolumns)

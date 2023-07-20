@@ -18,7 +18,7 @@
     <ClCompile Include="TableSystem.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Dictionary.c">
+    <ClCompile Include="Entry.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,7 +26,10 @@
     <ClInclude Include="Enum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Dictionary.h">
+    <ClInclude Include="Entry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\gigi\Downloads\khash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
