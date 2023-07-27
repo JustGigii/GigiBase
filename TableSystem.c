@@ -3,27 +3,31 @@
 #include <string.h>
 #include "Enum.h"
 
-typedef struct 
+typedef struct
 {
 	char* name;
 	DataType type;
 	void* row; //Data Structure to hold 
 
-}column, *refcolumn;
-typedef struct 
+}column, * refcolumn;
+
+typedef struct
 {
-	char * name;
+	char* name;
 	refcolumn primary;
-	refcolumn * refcolumns;
-	char* namecolumns[]
+	refcolumn* refcolumns;
+	char* namecolumns[];
 }Table, * refTable;
+
 
 Erros CreateTable(char * name, refcolumn primary, refcolumn* refcolumns)
 {
 	refTable table;
-	if (table =  malloc(sizeof(Table)) == NULL)
+	char* newname;
+	if ((table = malloc(sizeof(Table))) == NULL || (newname = malloc(strlen(name)))==NULL)
 		return CANNOT_ALLOCTE;
-	table->name = name;
+	strcpy(newname, name);
+	table->name = newname;
 	table->primary = primary;
 	table->refcolumns;
 	return SUCCES;
@@ -53,6 +57,7 @@ Erros buildHupa()
 	
 	
 }
+
 
 
 //void main()

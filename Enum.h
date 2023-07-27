@@ -1,6 +1,6 @@
 #pragma once
-#ifndef Enum.h
-#define Enum.h
+#ifndef Enum_h
+#define Enum_h  
 typedef enum
 {
 	CANNOT_ALLOCTE,
