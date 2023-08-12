@@ -20,30 +20,30 @@ typedef struct
 }Table, * refTable;
 
 
-Erros CreateTable(char * name, refcolumn primary, refcolumn* refcolumns)
+refcolumn CreateTable(char * name, refcolumn primary, refcolumn* refcolumns)
 {
 	refTable table;
 	char* newname;
 	if ((table = malloc(sizeof(Table))) == NULL || (newname = malloc(strlen(name)))==NULL)
-		return CANNOT_ALLOCTE;
+		return NULL;
 	strcpy(newname, name);
 	table->name = newname;
 	table->primary = primary;
 	table->refcolumns;
-	return SUCCES;
+	return table;
 	
 	
 }
 
-Erros CreateColumns(char* name, DataType type, void* row,refcolumn * newcolumnref  )
+refcolumn CreateColumns(char* name, DataType type, void* row )
 {
 	refcolumn newcolumn =  malloc(sizeof(column));
-	if (newcolumn == NULL) return CANNOT_ALLOCTE;
+	if (newcolumn == NULL) return NULL;
 	newcolumn->name = name;
 	newcolumn->row = row;
 	newcolumn->type = type;
-	*newcolumnref = newcolumn;
-	return SUCCES;
+	return newcolumn;
+
 }
 
 Erros buildHupa()
@@ -51,7 +51,7 @@ Erros buildHupa()
 	char name[] = "HupaTable";
 
 	refcolumn primery;
-	if (CreateColumns("id", USHORT, 0, &primery) == CANNOT_ALLOCTE)
+	if (CreateColumns("id", USHORT, 0, &primery) == NULL)
 		return CANNOT_ALLOCTE;
 
 	

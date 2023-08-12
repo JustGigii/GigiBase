@@ -4,7 +4,8 @@
 typedef enum
 {
 	CANNOT_ALLOCTE,
-	SUCCES
+	SUCCES,
+	NOT_FOUND
 
 }Erros;
 typedef enum

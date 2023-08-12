@@ -4,40 +4,87 @@
 #include <stdio.h>
 typedef struct node
 {
-	void * value;
+	void* value;
 	struct node* next;
-}Node,* RefNode;
+}Node, * RefNode;
 
-Erros initnode(RefNode node, void* value, int sizeofvalue)
+RefNode initnode(void* value, int sizeofvalue)
 {
 	Node* newnode;
 	newnode = malloc(sizeof(Node));
 	if (newnode == NULL)
-		return CANNOT_ALLOCTE;
+		return NULL;
 	newnode->value = malloc(sizeofvalue);
 	if (newnode->value == NULL)
-		return CANNOT_ALLOCTE;
+		return NULL;
 	memcpy(newnode->value, value, sizeofvalue);
-	node->next = NULL;
+	newnode->next = NULL;
+	return newnode;
+}
+
+Erros AddNode(RefNode* nodelink, void* value, int sizeofvalue)
+{
+	RefNode node = initnode(value, sizeofvalue);
+	if (node == NULL)
+		return CANNOT_ALLOCTE;
+	node->next = *nodelink;
+	*nodelink = node;
 	return SUCCES;
 }
 
-Erros AddNode(RefNode nodelink,void * value,int sizeofvalue)
+Erros RemoveNode(RefNode* nodelink, void* value, short (*cmp)(void*, void*))
 {
-	Node node;
-	if (initnode(&node, value, sizeof(sizeofvalue)) != SUCCES)
-		return CANNOT_ALLOCTE;
-	nodelink->next = nodelink;
-	nodelink = &node;
+ 	RefNode prev = *nodelink;
+	RefNode next;
+	if (cmp(value, prev->value) == 0)
+	{
+		*nodelink = prev->next;
+		free(prev->value);
+		free(prev);
+		return SUCCES;
+	}
+	next = prev->next;
+	while (prev)
+	{
+		
+		if (cmp(value, prev->value) == 0)
+		{
+			prev->next = next->next;
+			free(next->value);
+			free(next);
+			return SUCCES;
+		}
+		prev = prev->next;
+	}
+	return NOT_FOUND;
+
+}
+
+Erros Destroy(RefNode* nodelink)
+{
+	RefNode prev;
+	while (*nodelink)
+	{
+		prev = *nodelink;
+		*nodelink = prev->next;
+		free(prev->value);
+		free(prev);
+	}
 }
 
 int main()
 {
-	Node* hello;
+	RefNode hello = NULL;
 	char name[] = "name1";
 	char name1[] = "name12";
-	if (initnode(hello, name, sizeof(name)) == SUCCES)
-		if (AddNode(hello, name1, sizeof(name1)) == SUCCES)
-			printf("%s\n", hello->value);
-			printf("%s", hello->next->value);
+	hello = initnode(name, sizeof(name));
+	if (hello != NULL)
+		if (AddNode(&hello, name1, sizeof(name1)) == SUCCES)
+		{
+			printf("%s \n", hello->value);
+			printf("%s \n", hello->next->value);
+ 			RemoveNode(&hello, "name12", strcmp);
+		}
+
+	Destroy(&hello);
 }
