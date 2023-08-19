@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Enum.h"
+#include "node.h"
 
 typedef struct
 {
@@ -15,7 +16,7 @@ typedef struct
 {
 	char* name;
 	refcolumn primary;
-	refcolumn* refcolumns;
+	Node* refcolumns;
 	char* namecolumns[];
 }Table, * refTable;
 

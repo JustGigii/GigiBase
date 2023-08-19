@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="Enum.h" />
     <ClInclude Include="khash.h" />
+    <ClInclude Include="node.h" />
     <ClInclude Include="TableSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
