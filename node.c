@@ -71,20 +71,3 @@ Erros Destroy(RefNode* nodelink)
 		free(prev);
 	}
 }
-
-int main()
-{
-	RefNode hello = NULL;
-	char name[] = "name1";
-	char name1[] = "name12";
-	hello = initnode(name, sizeof(name));
-	if (hello != NULL)
-		if (AddNode(&hello, name1, sizeof(name1)) == SUCCES)
-		{
-			printf("%s \n", hello->value);
-			printf("%s \n", hello->next->value);
- 			RemoveNode(&hello, "name12", strcmp);
-		}
-
-	Destroy(&hello);
-}

@@ -1,8 +1,9 @@
-﻿  node.c
-D:\project\GigiBase\node.c(84,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'void *'
-D:\project\GigiBase\node.c(85,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'void *'
-D:\project\GigiBase\node.c(86,40): warning C4133: 'function': incompatible types - from 'int (__cdecl *)(const char *,const char *)' to 'short (__cdecl *)(void *,void *)'
-D:\project\GigiBase\node.c(87,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'void *'
-D:\project\GigiBase\node.c(88,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'void *'
-D:\project\GigiBase\node.c(73): warning C4716: 'Destroy': must return a value
+﻿  Database.c
+  Main.c
+D:\project\GigiBase\Main.c(31,3): warning C4098: 'main': 'void' function returning a value
+D:\project\GigiBase\Main.c(34,3): warning C4098: 'main': 'void' function returning a value
+D:\project\GigiBase\Main.c(42,31): warning C4047: '=': 'size_t' differs in levels of indirection from 'refcolumn'
+D:\project\GigiBase\Main.c(27,11): warning C4101: 'k': unreferenced local variable
+  Generating Code...
+D:\project\GigiBase\Database.c(25): warning C4715: 'initDataBase': not all control paths return a value
   MyDataBase.vcxproj -> D:\project\GigiBase\x64\Debug\MyDataBase.exe

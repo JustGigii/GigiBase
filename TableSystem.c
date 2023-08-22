@@ -3,7 +3,7 @@
 #include <string.h>
 #include "Enum.h"
 #include "node.h"
-
+#include "khash.h"
 typedef struct
 {
 	char* name;
@@ -16,12 +16,12 @@ typedef struct
 {
 	char* name;
 	refcolumn primary;
-	Node* refcolumns;
-	char* namecolumns[];
+	char numbercoll;
+	char** namecolumns;
 }Table, * refTable;
 
 
-refcolumn CreateTable(char * name, refcolumn primary, refcolumn* refcolumns)
+refTable CreateTable(char * name, refcolumn primary, refcolumn* refcolumns)
 {
 	refTable table;
 	char* newname;
@@ -30,7 +30,7 @@ refcolumn CreateTable(char * name, refcolumn primary, refcolumn* refcolumns)
 	strcpy(newname, name);
 	table->name = newname;
 	table->primary = primary;
-	table->refcolumns;
+	table->numbercoll = 0;
 	return table;
 	
 	
@@ -46,23 +46,52 @@ refcolumn CreateColumns(char* name, DataType type, void* row )
 	return newcolumn;
 
 }
+KHASH_MAP_INIT_STR(str,refcolumn)
 
-Erros buildHupa()
+char* insertname(char** namecolumns,char size, char* addname)
 {
-	char name[] = "HupaTable";
-
-	refcolumn primery;
-	if (CreateColumns("id", USHORT, 0, &primery) == NULL)
+	char** namecolumnsarry;
+	if (size == 0)
+		namecolumnsarry = (char*)malloc(sizeof(char*));
+	else
+		namecolumnsarry = (char*)realloc(namecolumns, sizeof(char*)*(size + 1));
+	if (namecolumnsarry == NULL)
 		return CANNOT_ALLOCTE;
-
-	
-	
+	char* name = malloc(strlen(addname));
+	if (name == NULL)
+		return CANNOT_ALLOCTE;
+	strcpy(name, addname);
+	namecolumnsarry[size] = name;
+	return namecolumnsarry;
 }
 
 
+Erros AddColumnsToTable(khash_t(str) * hash, refTable table, refcolumn column)
+{
+	khint_t k;
+	int ret;
+	char* key = column->name;
+	HashAdd(hash, key, column);
+	table->namecolumns = insertname(table->namecolumns, table->numbercoll, column->name);
+	table->numbercoll++;
 
-//void main()
-//{
-//	if (buildHupa() == SUCCES)
-//		printf("the table build succes");
-//}
+}
+
+Erros HashAdd(khash_t(str)* h1, char* paramName, refcolumn h)
+{
+	int ret;
+	khiter_t k;
+
+	k = kh_put(str, h1, paramName, &ret);
+	kh_value(h1, k) = h;
+}
+
+refcolumn GetHash(khash_t(str)* h, char* paramName)
+{
+	khiter_t k;
+	refcolumn handler;
+
+	k = kh_get(str, h, paramName);
+	handler = kh_value(h, k);
+	return handler;
+}

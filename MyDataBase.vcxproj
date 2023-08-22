@@ -128,10 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Database.c" />
+    <ClCompile Include="Main.c" />
     <ClCompile Include="node.c" />
     <ClCompile Include="TableSystem.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataBase.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="khash.h" />
     <ClInclude Include="node.h" />
