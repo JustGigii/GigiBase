@@ -1,9 +1,8 @@
-﻿  Database.c
-  Main.c
-D:\project\GigiBase\Main.c(31,3): warning C4098: 'main': 'void' function returning a value
+﻿  Main.c
+D:\project\GigiBase\CmdUi.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 D:\project\GigiBase\Main.c(34,3): warning C4098: 'main': 'void' function returning a value
-D:\project\GigiBase\Main.c(42,31): warning C4047: '=': 'size_t' differs in levels of indirection from 'refcolumn'
+D:\project\GigiBase\Main.c(37,3): warning C4098: 'main': 'void' function returning a value
 D:\project\GigiBase\Main.c(27,11): warning C4101: 'k': unreferenced local variable
-  Generating Code...
-D:\project\GigiBase\Database.c(25): warning C4715: 'initDataBase': not all control paths return a value
+D:\project\GigiBase\Main.c(28,9): warning C4101: 's': unreferenced local variable
+D:\project\GigiBase\Main.c(31,6): warning C4101: 'i': unreferenced local variable
   MyDataBase.vcxproj -> D:\project\GigiBase\x64\Debug\MyDataBase.exe

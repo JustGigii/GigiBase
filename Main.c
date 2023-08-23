@@ -3,7 +3,7 @@
 #include "TableSystem.h"
 #include "node.h"
 #include "DataBase.h"
-
+#include "CmdUi.h"
 
 
 refTable buildHupa()
@@ -26,20 +26,24 @@ void main()
 {
 	khiter_t k;
 	size_t s;
+	refTable table;
+	refcolumn coll;
+	int i;
 	RefBase db = initDataBase("gigi");
 	if (db == NULL)
 		return 1;
-	refTable table = buildHupa();
+	 table = buildHupa();
 	if (table == NULL)
 		return 1;
-	if (AddTable(db, table) == SUCCES)
-		printf("succes\n");
-	if (AddTable(db, buildHupa()) == SUCCES)
-		printf("succes");
-	refcolumn coll = CreateColumns("name", VARCHAR, 0);
-	
+	if (AddTable(db, table) == CANNOT_ALLOCTE)
+		printf("cannot allocit\n");
+	if (AddTable(db, buildHupa()) == CANNOT_ALLOCTE)
+		printf("cannot allocit\n");
+	coll = CreateColumns("name", VARCHAR, 0);
 	AddColumnsToTable(db->hash, table, coll);
-	s = GetHash(db->hash, "name");
+	table = db->tables->next->value;
+	printTable(table->name,table->namecolumns,table->numbercoll);
+
 	
 	
 }

@@ -17,9 +17,10 @@ typedef struct
 {
 	char* name;
 	refcolumn primary;
-	refcolumn* refcolumns;
-	char* namecolumns[];
+	char numbercoll;
+	char** namecolumns;
 }Table, * refTable;
+
 
 refTable CreateTable(char* name, refcolumn primary, refcolumn* refcolumns);
 
