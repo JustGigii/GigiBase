@@ -24,8 +24,6 @@ refTable buildHupa()
 
 void main()
 {
-	khiter_t k;
-	size_t s;
 	refTable table;
 	refcolumn coll;
 	int i;
@@ -41,7 +39,6 @@ void main()
 		printf("cannot allocit\n");
 	coll = CreateColumns("name", VARCHAR, 0);
 	AddColumnsToTable(db->hash, table, coll);
-	table = db->tables->next->value;
 	printTable(table->name,table->namecolumns,table->numbercoll);
 
 	

@@ -1,1 +1,2 @@
 D:\project\GigiBase\x64\Debug\MyDataBase.exe
+D:\עבודה\GigiBase\x64\Debug\MyDataBase.exe

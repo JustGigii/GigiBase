@@ -1,8 +1,4 @@
-﻿  Main.c
-D:\project\GigiBase\CmdUi.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\project\GigiBase\Main.c(34,3): warning C4098: 'main': 'void' function returning a value
-D:\project\GigiBase\Main.c(37,3): warning C4098: 'main': 'void' function returning a value
-D:\project\GigiBase\Main.c(27,11): warning C4101: 'k': unreferenced local variable
-D:\project\GigiBase\Main.c(28,9): warning C4101: 's': unreferenced local variable
-D:\project\GigiBase\Main.c(31,6): warning C4101: 'i': unreferenced local variable
-  MyDataBase.vcxproj -> D:\project\GigiBase\x64\Debug\MyDataBase.exe
+﻿  CmdUi.c
+D:\עבודה\GigiBase\CmdUi.c(12,42): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\עבודה\GigiBase\CmdUi.c(22): warning C4716: 'printTable': must return a value
+  MyDataBase.vcxproj -> D:\עבודה\GigiBase\x64\Debug\MyDataBase.exe
